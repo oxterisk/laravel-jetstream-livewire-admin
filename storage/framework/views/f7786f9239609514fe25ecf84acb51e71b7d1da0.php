@@ -1,0 +1,1 @@
+ok<?php /**PATH /media/ox/Devel/laravel/jetstream/storage/framework/views/7a85f4764bbd6daf1c3545efbbf0f279a6dc0beb.blade.php ENDPATH**/ ?>
