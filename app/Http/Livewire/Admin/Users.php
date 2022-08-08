@@ -158,10 +158,7 @@ class Users extends Component
             $validatedData = $this->validate( $validations );
 
             $this->user->save();
-            $this->dispatchBrowserEvent('alert',
-                ['type' => 'success',  'message' => __('Data updated')]);
-            //session()->flash( 'flash.banner', __('Data updated') );
-            //session()->flash( 'flash.bannerStyle', 'success' );
+            $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data updated')] );
 
         } else {
 
@@ -180,10 +177,8 @@ class Users extends Component
                 'active' => $this->user['active'] ?? 0,
                 'is_admin' => $this->user['is_admin'] ?? 0,
             ]);
-            $this->dispatchBrowserEvent('alert',
-                ['type' => 'success',  'message' => __('Data saved')]);
-            //session()->flash( 'flash.banner', __('Data saved') );
-            //session()->flash( 'flash.bannerStyle', 'success');
+
+            $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data saved')] );
 
         }
 
@@ -210,8 +205,6 @@ class Users extends Component
 
         $this->dispatchBrowserEvent('alert',
             ['type' => 'success',  'message' => __('Password updated')]);
-        //session()->flash( 'flash.banner', __('Password updated') );
-        //session()->flash( 'flash.bannerStyle', 'success' );
 
         $this->reset(['password']);
         $this->reset(['password_confirmation']);
@@ -230,11 +223,7 @@ class Users extends Component
     public function destroyUser( User $user ) {
 
         $user->delete();
-
-        $this->dispatchBrowserEvent('alert',
-            ['type' => 'success',  'message' => __('Data deleted')]);
-        //session()->flash( 'flash.banner', __('Data deleted') );
-        //session()->flash( 'flash.bannerStyle', 'success');
+        $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data deleted')] );
 
         $this->showModalUserDestroy = false;
         $this->reset(['user']);
@@ -246,7 +235,7 @@ class Users extends Component
         $this->reset(['userRoles']);
 
         $this->user = $user;
-        $this->roles = Role::all();
+        $this->roles = Role::orderBy( 'name', 'ASC' )->get();
         $this->userRoles = $user->roles->pluck( 'name' )->toArray();
 
         $this->showModalRoles = $user->id;
@@ -257,10 +246,7 @@ class Users extends Component
 
         $user->syncRoles( $this->userRoles );
 
-        $this->dispatchBrowserEvent('alert',
-            ['type' => 'success',  'message' => __('Data updated')]);
-        //session()->flash( 'flash.banner', __('Data updated') );
-        //session()->flash( 'flash.bannerStyle', 'success' );
+        $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data updated')] );
 
         $this->showModalRoles = false;
         $this->reset(['userRoles']);
@@ -272,7 +258,7 @@ class Users extends Component
         $this->reset(['userCompanies']);
 
         $this->user = $user;
-        $this->companies = Company::all();
+        $this->companies = Company::orderBy( 'name', 'ASC' )->get();
         $this->userCompanies = $user->companies->pluck( 'id' )->toArray();
 
         $this->showModalCompanies = $user->id;
@@ -283,10 +269,7 @@ class Users extends Component
 
         $user->companies()->sync( $this->userCompanies );
 
-        $this->dispatchBrowserEvent('alert',
-            ['type' => 'success',  'message' => __('Data updated')]);
-        //session()->flash( 'flash.banner', __('Data updated') );
-        //session()->flash( 'flash.bannerStyle', 'success' );
+        $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data updated')] );
 
         $this->showModalCompanies = false;
         $this->reset(['userCompanies']);

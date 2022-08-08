@@ -88,8 +88,7 @@ class Permissions extends Component
             $validatedData = $this->validate( $validations );
 
             $this->permission->save();
-            session()->flash( 'flash.banner', __('Data updated') );
-            session()->flash( 'flash.bannerStyle', 'success' );
+            $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data updated')] );
 
         } else {
 
@@ -100,8 +99,7 @@ class Permissions extends Component
                 'guard_name' => $this->permission['guard_name'] ?? null,
             ]);
 
-            session()->flash( 'flash.banner', __('Data saved') );
-            session()->flash( 'flash.bannerStyle', 'success');
+            $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data saved')] );
 
         }
 
@@ -119,9 +117,7 @@ class Permissions extends Component
     public function destroyPermission( Permission $permission ) {
 
         $permission->delete();
-
-        session()->flash( 'flash.banner', __('Data deleted') );
-        session()->flash( 'flash.bannerStyle', 'success');
+        $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data deleted')] );
 
         $this->showModalPermissionDestroy = false;
         $this->reset(['permission']);

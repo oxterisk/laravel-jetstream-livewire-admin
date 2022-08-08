@@ -136,8 +136,7 @@ class Companies extends Component
             }
 
             $this->company->save();
-            session()->flash( 'flash.banner', __('Data updated') );
-            session()->flash( 'flash.bannerStyle', 'success' );
+            $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data updated')] );
 
         } else {
 
@@ -152,8 +151,8 @@ class Companies extends Component
                 'active' => $this->company['active'] ?? 0,
                 'logo' => $this->company['logo'] ?? null,
             ]);
-            session()->flash( 'flash.banner', __('Data saved') );
-            session()->flash( 'flash.bannerStyle', 'success');
+
+            $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data saved')] );
 
         }
 
@@ -183,8 +182,7 @@ class Companies extends Component
         $company->delete();
         $this->reset(['company']);
 
-        session()->flash( 'flash.banner', __('Data deleted') );
-        session()->flash( 'flash.bannerStyle', 'success');
+        $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data deleted')] );
 
         $this->showModalCompanyDestroy = false;
 
@@ -195,7 +193,7 @@ class Companies extends Component
         $this->reset(['companyModules']);
 
         $this->company = $company;
-        $this->modules = Module::all();
+        $this->modules = Module::orderBy( 'name', 'ASC' )->get();
         $this->companyModules = $company->modules->pluck( 'id' )->toArray();
 
         $this->showModalModules = $company->id;
@@ -206,8 +204,7 @@ class Companies extends Component
 
         $company->modules()->sync( $this->companyModules );
 
-        session()->flash( 'flash.banner', __('Data updated') );
-        session()->flash( 'flash.bannerStyle', 'success' );
+        $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data updated')] );
 
         $this->showModalModules = false;
         $this->reset(['companyModules']);

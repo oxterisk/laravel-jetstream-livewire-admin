@@ -90,8 +90,7 @@ class Modules extends Component
         if ( isset( $this->module->id ) ) {
 
             $this->module->save();
-            session()->flash( 'flash.banner', __('Data updated') );
-            session()->flash( 'flash.bannerStyle', 'success' );
+            $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data updated')] );
 
         } else {
 
@@ -100,8 +99,7 @@ class Modules extends Component
                 'description' => $this->module['description'] ?? null,
                 'active' => $this->module['active'] ?? 0,
             ]);
-            session()->flash( 'flash.banner', __('Data saved') );
-            session()->flash( 'flash.bannerStyle', 'success');
+            $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data saved')] );
 
         }
 
@@ -128,8 +126,7 @@ class Modules extends Component
         $module->delete();
         $this->reset(['module']);
 
-        session()->flash( 'flash.banner', __('Data deleted') );
-        session()->flash( 'flash.bannerStyle', 'success');
+        $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data deleted')] );
 
         $this->showModalModuleDestroy = false;
 

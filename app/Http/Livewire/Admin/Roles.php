@@ -93,8 +93,7 @@ class Roles extends Component
             $validatedData = $this->validate( $validations );
 
             $this->role->save();
-            session()->flash( 'flash.banner', __('Data updated') );
-            session()->flash( 'flash.bannerStyle', 'success' );
+            $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data updated')] );
 
         } else {
 
@@ -105,8 +104,7 @@ class Roles extends Component
                 'guard_name' => $this->role['guard_name'] ?? null,
             ]);
 
-            session()->flash( 'flash.banner', __('Data saved') );
-            session()->flash( 'flash.bannerStyle', 'success');
+            $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data saved')] );
 
         }
 
@@ -124,9 +122,7 @@ class Roles extends Component
     public function destroyRole( Role $role ) {
 
         $role->delete();
-
-        session()->flash( 'flash.banner', __('Data deleted') );
-        session()->flash( 'flash.bannerStyle', 'success');
+        $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data deleted')] );
 
         $this->showModalRoleDestroy = false;
         $this->reset(['role']);
@@ -138,7 +134,7 @@ class Roles extends Component
         $this->reset(['rolePermissions']);
 
         $this->role = $role;
-        $this->permissions = Permission::where( 'guard_name', $this->role['guard_name'] )->get();
+        $this->permissions = Permission::where( 'guard_name', $this->role['guard_name'] )->orderBy( 'name', 'ASC' )->get();
         $this->rolePermissions = $role->permissions->pluck( 'name' )->toArray();
 
         $this->showModalPermissions = $role->id;
@@ -148,9 +144,7 @@ class Roles extends Component
     public function storePermissions( Role $role ) {
 
         $role->syncPermissions( $this->rolePermissions );
-
-        session()->flash( 'flash.banner', __('Data updated') );
-        session()->flash( 'flash.bannerStyle', 'success' );
+        $this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => __('Data updated')] );
 
         $this->showModalPermissions = false;
         $this->reset(['rolePermissions']);
