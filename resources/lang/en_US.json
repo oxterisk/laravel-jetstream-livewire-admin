@@ -1,0 +1,7 @@
+{
+    "User" : "{1}User|[2,*]Users",
+    "Role" : "{1}Rol|[2,*]Roles",
+    "Permission" : "{1}Permission|[2,*]Permissions",
+    "Module" : "{1}Module|[2,*]Modules",
+    "Company" : "{1}Company|[2,*]Companies"
+}
