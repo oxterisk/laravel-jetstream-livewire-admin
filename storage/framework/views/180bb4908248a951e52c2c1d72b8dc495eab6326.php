@@ -6,7 +6,7 @@
 <?php $component->withAttributes([]); ?>
      <?php $__env->slot('header', null, []); ?> 
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <?php echo e(__('Users')); ?>
+            <?php echo e(trans_choice( 'User', 2 )); ?>
 
         </h2>
      <?php $__env->endSlot(); ?>
@@ -20,15 +20,15 @@
         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('admin.users')->html();
-} elseif ($_instance->childHasBeenRendered('L9DJhQV')) {
-    $componentId = $_instance->getRenderedChildComponentId('L9DJhQV');
-    $componentTag = $_instance->getRenderedChildComponentTagName('L9DJhQV');
+} elseif ($_instance->childHasBeenRendered('ozPt8nz')) {
+    $componentId = $_instance->getRenderedChildComponentId('ozPt8nz');
+    $componentTag = $_instance->getRenderedChildComponentTagName('ozPt8nz');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('L9DJhQV');
+    $_instance->preserveRenderedChild('ozPt8nz');
 } else {
     $response = \Livewire\Livewire::mount('admin.users');
     $html = $response->html();
-    $_instance->logRenderedChild('L9DJhQV', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('ozPt8nz', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

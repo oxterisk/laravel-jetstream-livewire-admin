@@ -39,33 +39,33 @@
                                     </div>-->
 
                                     <x-jet-dropdown-link href="{{ route('users.index') }}">
-                                        {{ __('Users') }}
+                                        {{ trans_choice( 'User', 2 ) }}
                                     </x-jet-dropdown-link>
                                     <x-jet-dropdown-link href="{{ route('roles.index') }}">
-                                        {{ __('Roles') }}
+                                        {{ trans_choice( 'Role', 2 ) }}
                                     </x-jet-dropdown-link>
                                     <x-jet-dropdown-link href="{{ route('permissions.index') }}">
-                                        {{ __('Permissions') }}
+                                        {{ trans_choice( 'Permission', 2 ) }}
                                     </x-jet-dropdown-link>
                                     <x-jet-dropdown-link href="{{ route('modules.index') }}">
-                                        {{ __('Modules') }}
+                                        {{ trans_choice( 'Module', 2 ) }}
                                     </x-jet-dropdown-link>
                                     <div class="border-t border-gray-100"></div>
                                     <x-jet-dropdown-link href="{{ route('companies.index') }}">
-                                        {{ __('Companies') }}
+                                        {{ trans_choice( 'Company', 2 ) }}
                                     </x-jet-dropdown-link>
                                 </x-slot>
                             </x-jet-dropdown>
                         </div>
                     </div>
-
+<!--
                     <x-jet-nav-link href="#">
-                        {{ __('Item1') }}
+                        {{ __('MenuItem1') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="#">
-                        {{ __('Item2') }}
+                        {{ __('MenuItem2') }}
                     </x-jet-nav-link>
-
+-->
                 </div>
 
             </div>

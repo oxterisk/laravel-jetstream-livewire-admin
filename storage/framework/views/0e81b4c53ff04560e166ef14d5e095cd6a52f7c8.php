@@ -6,7 +6,7 @@
 <?php $component->withAttributes([]); ?>
      <?php $__env->slot('header', null, []); ?> 
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <?php echo e(__('Permissions')); ?>
+            <?php echo e(trans_choice( 'Permission', 2 )); ?>
 
         </h2>
      <?php $__env->endSlot(); ?>
@@ -20,15 +20,15 @@
         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('admin.permissions')->html();
-} elseif ($_instance->childHasBeenRendered('MEcFjeg')) {
-    $componentId = $_instance->getRenderedChildComponentId('MEcFjeg');
-    $componentTag = $_instance->getRenderedChildComponentTagName('MEcFjeg');
+} elseif ($_instance->childHasBeenRendered('5xPoxte')) {
+    $componentId = $_instance->getRenderedChildComponentId('5xPoxte');
+    $componentTag = $_instance->getRenderedChildComponentTagName('5xPoxte');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('MEcFjeg');
+    $_instance->preserveRenderedChild('5xPoxte');
 } else {
     $response = \Livewire\Livewire::mount('admin.permissions');
     $html = $response->html();
-    $_instance->logRenderedChild('MEcFjeg', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('5xPoxte', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

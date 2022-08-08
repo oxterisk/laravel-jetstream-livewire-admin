@@ -17,6 +17,7 @@
 
 
         <!-- Scripts -->
+        <script src="js/ztoaster.min.js" defer></script>
         <script src="<?php echo e(mix('js/app.js')); ?>" defer></script>
     </head>
     <body class="font-sans antialiased">
@@ -37,15 +38,15 @@
             <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('navigation-menu')->html();
-} elseif ($_instance->childHasBeenRendered('MiH5BBB')) {
-    $componentId = $_instance->getRenderedChildComponentId('MiH5BBB');
-    $componentTag = $_instance->getRenderedChildComponentTagName('MiH5BBB');
+} elseif ($_instance->childHasBeenRendered('5W5G6vc')) {
+    $componentId = $_instance->getRenderedChildComponentId('5W5G6vc');
+    $componentTag = $_instance->getRenderedChildComponentTagName('5W5G6vc');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('MiH5BBB');
+    $_instance->preserveRenderedChild('5W5G6vc');
 } else {
     $response = \Livewire\Livewire::mount('navigation-menu');
     $html = $response->html();
-    $_instance->logRenderedChild('MiH5BBB', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('5W5G6vc', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -70,6 +71,19 @@ echo $html;
         <?php echo $__env->yieldPushContent('modals'); ?>
 
         <?php echo \Livewire\Livewire::scripts(); ?>
+
+
+        <script>
+
+        window.addEventListener( 'alert', event => {
+
+                let title = event.detail.title ?? '';
+                let type = event.detail.type ?? '';
+                ztoast(event.detail.message, { type, title });
+
+        });
+
+        </script>
 
     </body>
 </html>

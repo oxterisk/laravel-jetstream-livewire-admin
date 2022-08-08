@@ -31,6 +31,15 @@ class Roles extends Component
         'role.guard_name' => 'nullable',
     ];
 
+    public function mount() {
+
+        $this->validationAttributes = [
+            'role.name' => __('Name'),
+            'role.guard_name' => __('Guard'),
+        ];
+
+    }
+
     public function render() {
 
         $roles = Role::when( $this->queryParams, function( $query ) {
@@ -40,7 +49,7 @@ class Roles extends Component
         ->orderBy( $this->sortBy, $this->sortAsc ? 'ASC' : 'DESC' )
         ->paginate(10);
 
-        return view( 'admin.roles.manage-roles', [
+        return view( 'admin.roles.component', [
             'roles' => $roles,
         ] );
 

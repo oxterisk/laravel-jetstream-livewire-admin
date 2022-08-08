@@ -6,7 +6,7 @@
 <?php $component->withAttributes([]); ?>
      <?php $__env->slot('header', null, []); ?> 
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <?php echo e(__('Modules')); ?>
+            <?php echo e(trans_choice( 'Module', 2 )); ?>
 
         </h2>
      <?php $__env->endSlot(); ?>
@@ -19,16 +19,16 @@
 <?php $component->withAttributes([]); ?>
         <?php
 if (! isset($_instance)) {
-    $html = \Livewire\Livewire::mount('modules.modules')->html();
-} elseif ($_instance->childHasBeenRendered('NN7o65Y')) {
-    $componentId = $_instance->getRenderedChildComponentId('NN7o65Y');
-    $componentTag = $_instance->getRenderedChildComponentTagName('NN7o65Y');
+    $html = \Livewire\Livewire::mount('modules')->html();
+} elseif ($_instance->childHasBeenRendered('aQG6T0z')) {
+    $componentId = $_instance->getRenderedChildComponentId('aQG6T0z');
+    $componentTag = $_instance->getRenderedChildComponentTagName('aQG6T0z');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('NN7o65Y');
+    $_instance->preserveRenderedChild('aQG6T0z');
 } else {
-    $response = \Livewire\Livewire::mount('modules.modules');
+    $response = \Livewire\Livewire::mount('modules');
     $html = $response->html();
-    $_instance->logRenderedChild('NN7o65Y', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('aQG6T0z', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

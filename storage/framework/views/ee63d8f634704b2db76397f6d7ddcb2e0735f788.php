@@ -72,7 +72,7 @@
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php $component->withAttributes(['href' => ''.e(route('users.index')).'']); ?>
-                                        <?php echo e(__('Users')); ?>
+                                        <?php echo e(trans_choice( 'User', 2 )); ?>
 
                                      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -86,7 +86,7 @@
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php $component->withAttributes(['href' => ''.e(route('roles.index')).'']); ?>
-                                        <?php echo e(__('Roles')); ?>
+                                        <?php echo e(trans_choice( 'Role', 2 )); ?>
 
                                      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -100,7 +100,7 @@
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php $component->withAttributes(['href' => ''.e(route('permissions.index')).'']); ?>
-                                        <?php echo e(__('Permissions')); ?>
+                                        <?php echo e(trans_choice( 'Permission', 2 )); ?>
 
                                      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -114,7 +114,7 @@
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php $component->withAttributes(['href' => ''.e(route('modules.index')).'']); ?>
-                                        <?php echo e(__('Modules')); ?>
+                                        <?php echo e(trans_choice( 'Module', 2 )); ?>
 
                                      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -129,7 +129,7 @@
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php $component->withAttributes(['href' => ''.e(route('companies.index')).'']); ?>
-                                        <?php echo e(__('Companies')); ?>
+                                        <?php echo e(trans_choice( 'Company', 2 )); ?>
 
                                      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -146,14 +146,14 @@
 <?php endif; ?>
                         </div>
                     </div>
-
+<!--
                     <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'jetstream::components.nav-link','data' => ['href' => '#']]); ?>
 <?php $component->withName('jet-nav-link'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php $component->withAttributes(['href' => '#']); ?>
-                        <?php echo e(__('Item1')); ?>
+                        <?php echo e(__('MenuItem1')); ?>
 
                      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -167,7 +167,7 @@
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php $component->withAttributes(['href' => '#']); ?>
-                        <?php echo e(__('Item2')); ?>
+                        <?php echo e(__('MenuItem2')); ?>
 
                      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -175,7 +175,7 @@
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
-
+-->
                 </div>
 
             </div>

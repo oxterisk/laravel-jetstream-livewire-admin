@@ -6,7 +6,7 @@
 <?php $component->withAttributes([]); ?>
      <?php $__env->slot('header', null, []); ?> 
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <?php echo e(__('Companies')); ?>
+            <?php echo e(trans_choice( 'Company', 2 )); ?>
 
         </h2>
      <?php $__env->endSlot(); ?>
@@ -19,16 +19,16 @@
 <?php $component->withAttributes([]); ?>
         <?php
 if (! isset($_instance)) {
-    $html = \Livewire\Livewire::mount('companies.companies')->html();
-} elseif ($_instance->childHasBeenRendered('0mHrt7I')) {
-    $componentId = $_instance->getRenderedChildComponentId('0mHrt7I');
-    $componentTag = $_instance->getRenderedChildComponentTagName('0mHrt7I');
+    $html = \Livewire\Livewire::mount('companies')->html();
+} elseif ($_instance->childHasBeenRendered('eg94X8R')) {
+    $componentId = $_instance->getRenderedChildComponentId('eg94X8R');
+    $componentTag = $_instance->getRenderedChildComponentTagName('eg94X8R');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('0mHrt7I');
+    $_instance->preserveRenderedChild('eg94X8R');
 } else {
-    $response = \Livewire\Livewire::mount('companies.companies');
+    $response = \Livewire\Livewire::mount('companies');
     $html = $response->html();
-    $_instance->logRenderedChild('0mHrt7I', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('eg94X8R', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

@@ -18,7 +18,7 @@
                     <x-jet-input-error for="password" class="mt-2" />
                 </div>
                 <div class="col-span-6 sm:col-span-3">
-                    <x-jet-label for="password_confirmation" value="{{ __('Password confirmation') }}" />
+                    <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
                     <x-jet-input id="password_confirmation" type="password" class="mt-1 block w-full" wire:model.defer="password_confirmation" />
                     <x-jet-input-error for="password_confirmation" class="mt-2" />
                 </div>

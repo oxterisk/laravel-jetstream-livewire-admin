@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Modules') }}
+            {{ trans_choice( 'Module', 2 ) }}
         </h2>
     </x-slot>
 
     <x-section-container>
-        @livewire('modules.modules')
+        @livewire('modules')
     </x-section-container>
 </x-app-layout>

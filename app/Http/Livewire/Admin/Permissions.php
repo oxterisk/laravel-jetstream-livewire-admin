@@ -26,6 +26,15 @@ class Permissions extends Component
         'permission.guard_name' => 'nullable',
     ];
 
+    public function mount() {
+
+        $this->validationAttributes = [
+            'permission.name' => __('Name'),
+            'permission.guard_name' => __('Guard'),
+        ];
+
+    }
+
     public function render() {
 
         $permissions = Permission::when( $this->queryParams, function( $query ) {
@@ -35,7 +44,7 @@ class Permissions extends Component
         ->orderBy( $this->sortBy, $this->sortAsc ? 'ASC' : 'DESC' )
         ->paginate(10);
 
-        return view( 'admin.permissions.manage-permissions', [
+        return view( 'admin.permissions.component', [
             'permissions' => $permissions,
         ] );
 

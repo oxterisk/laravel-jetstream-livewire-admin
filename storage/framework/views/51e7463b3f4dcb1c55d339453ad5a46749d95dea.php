@@ -36,7 +36,7 @@
                 </svg>
             </span>
         </div>
-        <input wire:model.debounce.500ms="<?php echo e($searchModel); ?>" type="text" name="search-<?php echo e($searchModel); ?>" id="search-<?php echo e($searchModel); ?>" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 pr-12 sm:text-sm border-gray-300 rounded-md" placeholder="Search">
+        <input wire:model.debounce.500ms="<?php echo e($searchModel); ?>" type="text" name="search-<?php echo e($searchModel); ?>" id="search-<?php echo e($searchModel); ?>" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 pr-12 sm:text-sm border-gray-300 rounded-md" placeholder="<?php echo e(__("Search")); ?>">
     </div>
     <?php endif; ?>
     <div class="order-1 md:order-2">

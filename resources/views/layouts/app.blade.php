@@ -16,6 +16,7 @@
         @livewireStyles
 
         <!-- Scripts -->
+        <script src="js/ztoaster.min.js" defer></script>
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
@@ -42,5 +43,18 @@
         @stack('modals')
 
         @livewireScripts
+
+        <script>
+
+        window.addEventListener( 'alert', event => {
+
+                let title = event.detail.title ?? '';
+                let type = event.detail.type ?? '';
+                ztoast(event.detail.message, { type, title });
+
+        });
+
+        </script>
+
     </body>
 </html>
