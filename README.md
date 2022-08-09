@@ -6,7 +6,7 @@
 
 ---
 
-Manage
+Manage:
 
 - Users
 - Roles
