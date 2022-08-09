@@ -41,6 +41,5 @@ In ``config/app.php`` file, set the parameter ``locale`` to ``es_ES``.
 
 ## Previews
 
-|||
-|-|-|
-|![](https://www.oxterisk.com/wp-content/uploads/2022/08/users.jpeg)|![](https://www.oxterisk.com/wp-content/uploads/2022/08/user-form.jpeg)|
+![](https://www.oxterisk.com/wp-content/uploads/2022/08/users.jpeg)
+![](https://www.oxterisk.com/wp-content/uploads/2022/08/user-form.jpeg)
